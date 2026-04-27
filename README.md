@@ -1,31 +1,87 @@
-Secure Coding Review Report
+# Secure Coding Review - CodeAlpha Internship
 
-Project: Login System using SQLite
+## 📌 Project Overview
+This project demonstrates security vulnerabilities in a login system and how to fix them using secure coding practices.
 
-1. SQL Injection Vulnerability
-Issue: User input directly included in SQL query.
-Risk: Attackers can bypass authentication using malicious input.
-Fix: Use parameterized queries.
+---
 
-2. Plain Text Password Storage
-Issue: Passwords stored without encryption.
-Risk: Data breach exposes all user credentials.
-Fix: Use hashing algorithms like SHA-256.
+## 🔴 Vulnerable Application
+The vulnerable version of the application is prone to **SQL Injection attacks**.
 
-3. Insecure Password Input
-Issue: Password visible during input.
-Risk: Shoulder surfing attack.
-Fix: Use getpass module.
+### Example Attack:
+Username: ' OR '1'='1' --
+Password: anything
 
-4. Lack of Input Validation
-Issue: No checks on user input.
-Risk: Allows malicious payloads.
-Fix: Validate and sanitize inputs.
+---
 
-5. No Logging Mechanism
-Issue: No monitoring of login attempts.
-Risk: Attacks go undetected.
-Fix: Implement logging system.
+### Result:
+✔ Login Successful (Unauthorized Access)
 
-Conclusion:
-The vulnerable system was exposed to multiple high-risk security threats. The secure version mitigates these issues using parameterized queries, password hashing, secure input handling, and logging.
+### Issues:
+- SQL Injection vulnerability
+- Plain text password storage
+- No input validation
+- No logging mechanism
+
+---
+
+## 🟢 Secure Application
+The secure version fixes these issues using:
+
+- Parameterized queries (prevents SQL Injection)
+- Password hashing (SHA-256)
+- Secure password input (getpass)
+- Logging of login attempts
+
+---
+
+## 🔐 Security Improvements
+| Vulnerability | Fix |
+|--------------|-----|
+| SQL Injection | Parameterized Queries |
+| Plain Password | Hashing |
+| Visible Input | getpass |
+| No Logging | Log File |
+
+---
+
+## 🛠 Tools Used
+- Python
+- SQLite
+- Hashlib
+- Scapy (previous task)
+
+---
+
+## ▶ How to Run
+
+### Step 1: Setup Database
+
+python setup_db.py
+
+
+### Step 2: Run Vulnerable App
+
+python vulnerable_app.py
+
+
+### Step 3: Run Secure App
+
+python secure_app.py
+
+## ▶ How to Run
+
+### Step 1: Setup Database
+
+---
+
+## 🎯 Learning Outcome
+This project helped me understand:
+- How SQL Injection attacks work
+- Importance of secure coding practices
+- Real-world authentication vulnerabilities
+
+---
+
+## 🔗 Internship
+Completed as part of CodeAlpha Cyber Security Internship
