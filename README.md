@@ -1,4 +1,4 @@
-# Secure Coding Review - CodeAlpha Internship
+# Secure Coding Review 
 
 ## 📌 Project Overview
 This project demonstrates security vulnerabilities in a login system and how to fix them using secure coding practices.
